@@ -1,5 +1,7 @@
 # news-aggregation
-A simple project to optimize top sample articles based on the number of page views.
+
+A simple project to fetch RSS feeds from the New York Times, track user interactions on them
+and recommend top articles based on the number of page views.
 
 * Uses Spring-Boot with Spring Data JPA and Spring Data REST
 
