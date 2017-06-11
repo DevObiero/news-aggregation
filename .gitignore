@@ -1,0 +1,21 @@
+# generic ignores
+bin
+target
+build
+.DS_Store
+
+# eclipse
+.classpath
+.project
+.settings
+.metadata
+.externalToolBuilders
+*.launch
+
+# intellij
+.idea
+*.iml
+
+# Gradle
+.gradle
+classes

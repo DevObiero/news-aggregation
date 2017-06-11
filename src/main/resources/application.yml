@@ -1,0 +1,31 @@
+server:
+    port: 5000
+
+spring:
+  application:
+    name: news-aggregation-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/news_aggregation_service
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password:
+    testOnBorrow: true
+    validationQuery: SELECT 1
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    hibernate:
+        naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+        ddl-auto: create-drop
+    properties:
+      jadira:
+        usertype:
+          autoRegisterUserTypes: true
+
+feed:
+  rss:
+    url: http://rss.nytimes.com/services/xml/rss/nyt/Travel.xml
+
+logging:
+  file: /tmp/news-aggregation-service.log
+  level:
+    root: INFO
