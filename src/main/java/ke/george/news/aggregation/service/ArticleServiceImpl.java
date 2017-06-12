@@ -12,6 +12,7 @@ import ke.george.news.aggregation.web.NotFoundException;
 
 /**
  * Default implementation for article service
+ *
  * @author george
  */
 @Service
@@ -27,8 +28,8 @@ public class ArticleServiceImpl implements ArticleService {
      * @return
      */
     @Override
-    public Page<Article> findAll(Pageable pageable) {
-        return articleRepository.findAll(pageable);
+    public Page<Article> findArticlesByScore(Pageable pageable) {
+        return articleRepository.findByOrderByScoreDesc(pageable);
     }
 
     /**

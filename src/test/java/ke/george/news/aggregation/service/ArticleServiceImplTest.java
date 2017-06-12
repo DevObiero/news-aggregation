@@ -40,16 +40,17 @@ public class ArticleServiceImplTest {
         MockitoAnnotations.initMocks(this);
     }
 
-    @Test    public void canGetArticles() throws Exception {
+    @Test
+    public void canGetArticles() throws Exception {
         PageRequest pageRequest = new PageRequest(0, 10);
         Page<Article> page = new PageBuilder<Article>()
                 .elements(Lists.newArrayList(new Article("Test Title", "Mark Twain", "http://", ""),
                         new Article("Test Title @", "New Author", "http://", "")))
                 .pageRequest(pageRequest)
                 .build();
-        when(articleRepository.findAll(pageRequest)).thenReturn(page);
-        Page<Article> articles = victim.findAll(pageRequest);
-        verify(articleRepository, times(1)).findAll(pageRequest);
+        when(articleRepository.findByOrderByScoreDesc(pageRequest)).thenReturn(page);
+        Page<Article> articles = victim.findArticlesByScore(pageRequest);
+        verify(articleRepository, times(1)).findByOrderByScoreDesc(pageRequest);
 
         assertEquals(2, articles.getNumberOfElements());
 

@@ -29,16 +29,16 @@ public class ArticleController {
     private ArticleService articleService;
 
     /**
-     * Get a list of articles
+     * Get a list of articles ordered by score
      *
      * @param pageable object
      * @return a page of articles
      */
     @RequestMapping(method = RequestMethod.GET)
     public Page<Article> getArticles(Pageable pageable) {
-        LOG.debug("Finding all article entries");
-        Page<Article> articles = articleService.findAll(pageable);
-        LOG.debug("Found {} article entries", articles.getNumberOfElements());
+        LOG.debug("Finding all article entries ordered by score");
+        Page<Article> articles = articleService.findArticlesByScore(pageable);
+        LOG.debug("Found {} article entries ordered by score", articles.getNumberOfElements());
 
         return articles;
     }

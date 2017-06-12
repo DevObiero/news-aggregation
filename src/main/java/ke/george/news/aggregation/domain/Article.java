@@ -35,6 +35,9 @@ public class Article implements Serializable {
     @Column(name = "content", columnDefinition = "MEDIUMBLOB")
     private String content;
 
+    @Column(name = "score")
+    private Double score;
+
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "date_created")
     private Date dateCreated;
@@ -98,6 +101,14 @@ public class Article implements Serializable {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public Double getScore() {
+        return score;
+    }
+
+    public void setScore(Double score) {
+        this.score = score;
     }
 
     public Date getDateCreated() {

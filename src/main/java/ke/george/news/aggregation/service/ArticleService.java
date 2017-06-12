@@ -12,6 +12,6 @@ import ke.george.news.aggregation.web.NotFoundException;
  * @author george
  */
 public interface ArticleService {
-    public Page<Article> findAll(Pageable pageable);
+    public Page<Article> findArticlesByScore(Pageable pageable);
     public Article findOneById(Long articleId) throws NotFoundException;
 }
