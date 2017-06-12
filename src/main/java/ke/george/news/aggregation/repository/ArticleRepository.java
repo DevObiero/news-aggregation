@@ -17,6 +17,5 @@ import ke.george.news.aggregation.domain.Article;
 @Repository
 public interface ArticleRepository extends JpaRepository<Article, Long> {
     public Optional<Article> findById(Long id);
-
     public Page<Article> findByOrderByScoreDesc(Pageable pageable);
 }
