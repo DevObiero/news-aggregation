@@ -11,3 +11,6 @@ and recommend top articles based on the number of page views.
 
 ### Configuration ####
 * application.yml configuration file
+
+### Todo ###
+Implement a Z-Score algorithm for rating viewed articles
