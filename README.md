@@ -6,7 +6,8 @@ and recommend top articles based on the number of page views.
 Z-Score ranking of the number of page views has been used to 
 rank the individual articles
 
-* Uses Spring-Boot with Spring Data JPA and Spring Data REST
+### Technologies ###
+Java 8, Spring-Boot with Spring Data JPA and Spring Data REST
 
 ### Building ###
 * Run './gradlew build' to build the software
