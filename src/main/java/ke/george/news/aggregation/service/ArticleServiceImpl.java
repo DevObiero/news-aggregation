@@ -1,7 +1,6 @@
 package ke.george.news.aggregation.service;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -16,7 +15,6 @@ import org.springframework.transaction.annotation.Transactional;
 import ke.george.news.aggregation.domain.Article;
 import ke.george.news.aggregation.domain.Rating;
 import ke.george.news.aggregation.repository.ArticleRepository;
-import ke.george.news.aggregation.web.ArticleController;
 import ke.george.news.aggregation.web.NotFoundException;
 
 /**
