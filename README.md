@@ -12,5 +12,9 @@ and recommend top articles based on the number of page views.
 ### Configuration ####
 * application.yml configuration file
 
+### Status ###
+
+[![Build Status](https://travis-ci.org/DevObiero/news-aggregation.svg?branch=master)](https://travis-ci.org/DevObiero/news-aggregation)
+
 ### Todo ###
 Implement a Z-Score algorithm for rating viewed articles
