@@ -3,6 +3,9 @@
 A simple project to fetch RSS feeds from the New York Times, track user interactions on them
 and recommend top articles based on the number of page views.
 
+Z-Score ranking of the number of page views has been used to 
+rank the individual articles
+
 * Uses Spring-Boot with Spring Data JPA and Spring Data REST
 
 ### Building ###
@@ -16,5 +19,3 @@ and recommend top articles based on the number of page views.
 
 [![Build Status](https://travis-ci.org/DevObiero/news-aggregation.svg?branch=master)](https://travis-ci.org/DevObiero/news-aggregation)
 
-### Todo ###
-Implement a Z-Score algorithm for rating viewed articles
