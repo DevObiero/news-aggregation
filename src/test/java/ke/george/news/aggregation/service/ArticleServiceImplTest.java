@@ -61,6 +61,7 @@ public class ArticleServiceImplTest {
         when(articleRepository.findById(ARTICLE_ID)).thenReturn(Optional.of(article));
         Article fetchedArticle = victim.findOneById(ARTICLE_ID);
         verify(articleRepository, times(1)).findById(ARTICLE_ID);
+        verify(articleRepository, times(1)).save(article);
 
         assertEquals(article, fetchedArticle);
     }

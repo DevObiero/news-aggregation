@@ -1,5 +1,7 @@
 package ke.george.news.aggregation.domain;
 
+import java.util.List;
+
 import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
 
 /**
@@ -12,20 +14,20 @@ import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
  *
  */
 public class Rating {
-    private double[] data;
-    private Double numOfPageViews;
+    private List<Article> articles;
+    private Article article;
     private DescriptiveStatistics stats;
 
-    public Rating(double[] data, double numOfPageViews) {
-        this.data = data;
-        this.numOfPageViews = numOfPageViews;
+    public Rating(List<Article> articles, Article article) {
+        this.articles = articles;
+        this.article = article;
         this.stats = new DescriptiveStatistics();
         this.setData();
     }
 
     private void setData() {
-        for (double aData : data) {
-            stats.addValue(aData);
+        for (Article article : articles) {
+            stats.addValue(article.getNoOfPageViews());
         }
     }
 
@@ -33,12 +35,12 @@ public class Rating {
         return stats.getMean();
     }
 
-
     private double getStdDev() {
         return stats.getStandardDeviation();
     }
 
     public double getZScore() {
-        return (numOfPageViews - getMean()) / getStdDev();
+        double rating = (article.getNoOfPageViews() - getMean()) / getStdDev();
+        return Double.isFinite(rating) ? rating : 0d;
     }
 }

@@ -14,7 +14,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 /**
- * @author george 
+ * @author george
  */
 @Entity
 @Table(name = "article")
@@ -34,6 +34,9 @@ public class Article implements Serializable {
 
     @Column(name = "content", columnDefinition = "MEDIUMBLOB")
     private String content;
+
+    @Column(name = "num_of_page_views")
+    private Double noOfPageViews;
 
     @Column(name = "score")
     private Double score;
@@ -60,6 +63,7 @@ public class Article implements Serializable {
     public void prePersist() {
         this.dateCreated = new Date();
         this.dateUpdated = new Date();
+        this.noOfPageViews = 1d;
     }
 
     @PreUpdate
@@ -109,6 +113,18 @@ public class Article implements Serializable {
 
     public void setScore(Double score) {
         this.score = score;
+    }
+
+    public Double getNoOfPageViews() {
+        return noOfPageViews;
+    }
+
+    public void setNoOfPageViews(Double noOfPageViews) {
+        this.noOfPageViews = noOfPageViews;
+    }
+
+    public void incrementNoOfPageViews() {
+        this.noOfPageViews += 1d;
     }
 
     public Date getDateCreated() {
